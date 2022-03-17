@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="clima" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="itX-Ei-Zwm">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="903"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="95" translatesAutoresizingMaskIntoConstraints="NO" id="bkN-VA-dqS" userLabel="STVPrinciapl">
+                                <rect key="frame" x="30" y="59" width="354" height="510"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Fd3-Cn-7VH" userLabel="STVBuscador">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjg-bS-IKx">
+                                                <rect key="frame" x="0.0" y="0.5" width="50" height="49"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="Y4n-1Y-Jxa"/>
+                                                    <constraint firstAttribute="width" constant="50" id="emz-Ft-kMm"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="location.circle" catalog="system"/>
+                                                <connections>
+                                                    <action selector="ubicacionBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Liq-KT-w2I"/>
+                                                </connections>
+                                            </button>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Buscar" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cnf-7A-yDP">
+                                                <rect key="frame" x="60" y="0.0" width="234" height="50"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="22"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqi-dV-YpA">
+                                                <rect key="frame" x="304" y="1" width="50" height="48"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="Yk1-Ky-B8h"/>
+                                                    <constraint firstAttribute="width" constant="50" id="fBc-vH-92r"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="magnifyingglass" catalog="system"/>
+                                                <connections>
+                                                    <action selector="buscarBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nA9-0r-lnd"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="RAM-0g-GH0" userLabel="STVTemperatura">
+                                        <rect key="frame" x="0.0" y="145" width="354" height="120"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="bOv-vK-4Xe">
+                                                <rect key="frame" x="0.0" y="2.5" width="120" height="115"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="120" id="GcJ-oZ-zwL"/>
+                                                    <constraint firstAttribute="height" constant="120" id="Jax-MD-QJp"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="  23.5 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvi-iT-3Cr">
+                                                <rect key="frame" x="135" y="0.0" width="116" height="120"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="45"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ºC" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xoG-zp-BdO">
+                                                <rect key="frame" x="266" y="0.0" width="88" height="120"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="45"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="En Morelia el clima está caluroso con probabilidad de lluvia" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t75-rh-X5o">
+                                        <rect key="frame" x="0.0" y="360" width="354" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="354" id="Dmv-vS-ib9"/>
+                                            <constraint firstAttribute="height" constant="150" id="GfB-ER-GBR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="35"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="itX-Ei-Zwm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="4qv-rM-E9i"/>
+                            <constraint firstItem="bkN-VA-dqS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="AK9-mN-WEL"/>
+                            <constraint firstItem="bkN-VA-dqS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="FRD-Fw-PI6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="itX-Ei-Zwm" secondAttribute="trailing" id="HmE-cZ-l4w"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bkN-VA-dqS" secondAttribute="bottom" constant="300" id="b49-Lf-HR8"/>
+                            <constraint firstItem="itX-Ei-Zwm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gyW-0f-Bgp"/>
+                            <constraint firstAttribute="trailing" secondItem="bkN-VA-dqS" secondAttribute="trailing" constant="30" id="iWt-wj-JGX"/>
+                            <constraint firstAttribute="bottom" secondItem="itX-Ei-Zwm" secondAttribute="bottom" id="s68-1h-EB1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="iconoClima" destination="bOv-vK-4Xe" id="J7o-eq-nng"/>
+                        <outlet property="imagenFondo" destination="itX-Ei-Zwm" id="I6X-KW-XhZ"/>
+                        <outlet property="lblDescripcion" destination="t75-rh-X5o" id="35m-x8-Vop"/>
+                        <outlet property="lblTemperatura" destination="lvi-iT-3Cr" id="RC6-rG-wxq"/>
+                        <outlet property="textoBuscador" destination="cnf-7A-yDP" id="ZXK-fs-PT3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140.57971014492756" y="103.79464285714285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cloud" catalog="system" width="128" height="87"/>
+        <image name="location.circle" catalog="system" width="128" height="121"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
