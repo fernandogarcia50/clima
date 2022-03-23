@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UITextFieldDelegate {
 
     @IBOutlet weak var textoBuscador: UITextField!
     @IBOutlet weak var imagenFondo: UIImageView!
@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var iconoClima: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        lblDescripcion.text="calando la app"
+        textoBuscador.delegate=self
         // Do any additional setup after loading the view.
     }
 
@@ -26,6 +26,29 @@ class ViewController: UIViewController {
     
     @IBAction func buscarBtn(_ sender: UIButton) {
         print(textoBuscador.text ?? "no encontre nada")
+        
     }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print(textoBuscador.text ?? "")
+        //ocultar comentario
+        textoBuscador.endEditing(true)
+        return true
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        print("ya acabe de editar")
+        
+    }
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        if(textoBuscador.text != ""){
+            return true
+        }else{
+            print("uno se escribio nada")
+            textoBuscador.placeholder="Escribe un nombre"
+            return false
+        }
+        
+    }
+    
+    
 }
 
