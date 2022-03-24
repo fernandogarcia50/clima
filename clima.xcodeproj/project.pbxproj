@@ -7,15 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38E7064027ECC2560056DDC1 /* DatosClima.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E7063F27ECC2560056DDC1 /* DatosClima.swift */; };
+		38E7064327ECC3810056DDC1 /* ClimaModelo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E7064227ECC3810056DDC1 /* ClimaModelo.swift */; };
 		38F39DC327E3859200276E53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F39DC227E3859200276E53 /* AppDelegate.swift */; };
 		38F39DC527E3859200276E53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F39DC427E3859200276E53 /* SceneDelegate.swift */; };
 		38F39DC727E3859200276E53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F39DC627E3859200276E53 /* ViewController.swift */; };
 		38F39DCA27E3859200276E53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38F39DC827E3859200276E53 /* Main.storyboard */; };
 		38F39DCC27E3859300276E53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38F39DCB27E3859300276E53 /* Assets.xcassets */; };
 		38F39DCF27E3859300276E53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38F39DCD27E3859300276E53 /* LaunchScreen.storyboard */; };
+		38F5FAA427EB710E00F35605 /* climaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F5FAA327EB710E00F35605 /* climaManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		38E7063F27ECC2560056DDC1 /* DatosClima.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatosClima.swift; sourceTree = "<group>"; };
+		38E7064227ECC3810056DDC1 /* ClimaModelo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimaModelo.swift; sourceTree = "<group>"; };
 		38F39DBF27E3859200276E53 /* clima.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = clima.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38F39DC227E3859200276E53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38F39DC427E3859200276E53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +29,7 @@
 		38F39DCB27E3859300276E53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38F39DCE27E3859300276E53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38F39DD027E3859300276E53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38F5FAA327EB710E00F35605 /* climaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = climaManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,9 @@
 				38F39DCB27E3859300276E53 /* Assets.xcassets */,
 				38F39DCD27E3859300276E53 /* LaunchScreen.storyboard */,
 				38F39DD027E3859300276E53 /* Info.plist */,
+				38F5FAA327EB710E00F35605 /* climaManager.swift */,
+				38E7063F27ECC2560056DDC1 /* DatosClima.swift */,
+				38E7064227ECC3810056DDC1 /* ClimaModelo.swift */,
 			);
 			path = clima;
 			sourceTree = "<group>";
@@ -137,8 +146,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38E7064327ECC3810056DDC1 /* ClimaModelo.swift in Sources */,
 				38F39DC727E3859200276E53 /* ViewController.swift in Sources */,
+				38E7064027ECC2560056DDC1 /* DatosClima.swift in Sources */,
 				38F39DC327E3859200276E53 /* AppDelegate.swift in Sources */,
+				38F5FAA427EB710E00F35605 /* climaManager.swift in Sources */,
 				38F39DC527E3859200276E53 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

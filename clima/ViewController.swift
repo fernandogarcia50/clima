@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController,UITextFieldDelegate {
-
+    var QlimaManager = climaManager()
     @IBOutlet weak var textoBuscador: UITextField!
     @IBOutlet weak var imagenFondo: UIImageView!
     @IBOutlet weak var lblDescripcion: UILabel!
@@ -26,6 +26,7 @@ class ViewController: UIViewController,UITextFieldDelegate {
     
     @IBAction func buscarBtn(_ sender: UIButton) {
         print(textoBuscador.text ?? "no encontre nada")
+        textoBuscador.endEditing(true)
         
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -36,6 +37,7 @@ class ViewController: UIViewController,UITextFieldDelegate {
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
         print("ya acabe de editar")
+        QlimaManager.obtenerClima(nombreCiudad: textoBuscador.text ?? "Morelia")
         
     }
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
