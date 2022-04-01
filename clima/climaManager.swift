@@ -6,9 +6,15 @@
 //
 
 import Foundation
+protocol ClimaManagerDelegado {
+    
+    func actualizarClima(objClima:ClimaModelo)
+    func huboError(error:Error)
+}
 
 struct climaManager {
     let climaURL="https://api.openweathermap.org/data/2.5/weather?&appid=e36c14461e99e979935242f4d6050b8c&units=metric&lang=es"
+    var delegado: ClimaManagerDelegado?
     func obtenerClima(nombreCiudad: String){
         let urlString="\(climaURL)&q=\(nombreCiudad)"
         print(urlString)
@@ -35,17 +41,20 @@ struct climaManager {
     }
     func controladorFinalizacion(datos: Data?, respuesta:URLResponse?, error:Error?){
         if error != nil{
+            delegado?.huboError(error: error!)
             print(error?.localizedDescription ?? "no se ubico el error")
             return
         }else{
             if let datosSeguros=datos{
                 let datosString=String(data: datosSeguros, encoding: .utf8)
                 print(datosString ?? "no hubo datos")
-                analizarJSON(datosClima: datosSeguros)
+                if let objClima=analizarJSON(datosClima: datosSeguros){
+                    delegado?.actualizarClima(objClima: objClima)
+                }
             }
         }
     }
-    func analizarJSON(datosClima: Data){
+    func analizarJSON(datosClima: Data) -> ClimaModelo?{
         let decodificador = JSONDecoder()
         do{
             let datosDecodificados = try decodificador.decode(DatosClima.self, from: datosClima)
@@ -54,13 +63,16 @@ struct climaManager {
             let nombreCiudad=datosDecodificados.name ?? ""
             let temperatura = datosDecodificados.main?.temp ?? 0.0
             let humedad = datosDecodificados.main?.humidity ?? 0
-            
-            var objClimaModelo = ClimaModelo(condicionID: condicionID, nombreCiudad: nombreCiudad, temperatura: temperatura, humedad: humedad)
+            let descripcion=datosDecodificados.weather[0].description ?? "No hay descripcion"
+            var objClimaModelo = ClimaModelo(condicionID: condicionID, nombreCiudad: nombreCiudad, temperatura: temperatura, humedad: humedad,descripcion:descripcion)
             print(objClimaModelo.temperaturaString)
             print(objClimaModelo.nombreCondicion)
+            return objClimaModelo
             
         }catch{
+            delegado?.huboError(error: error)
             print(error)
+            return nil
         }
         
     }
